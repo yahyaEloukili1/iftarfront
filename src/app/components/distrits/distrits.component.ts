@@ -13,6 +13,7 @@ districts
   ngOnInit(): void {
     this.rnpService.getResourceAll('districts').subscribe(data=>{
       this.districts = data['_embedded'].districts
+      console.log(this.districts)
   
   })
 

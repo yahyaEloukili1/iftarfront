@@ -1,1 +1,18 @@
-<p>distrits works!</p>
+<div class="container">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th style=" text-align: center;vertical-align: middle">District</th>
+            <th style=" text-align: center;vertical-align: middle">Actions</th>
+           
+          </tr>
+         
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of districts; let i = index">
+          <td>{{p.designation}}</td>
+            <td><button  class="btn btn-success"><i class="fa fa-pencil"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
