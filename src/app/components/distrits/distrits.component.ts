@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/services/my-service.service';
 
 @Component({
@@ -8,14 +9,32 @@ import { MyServiceService } from 'src/app/services/my-service.service';
 })
 export class DistritsComponent implements OnInit {
 districts
-  constructor(private rnpService: MyServiceService) { }
+  constructor(private rnpService: MyServiceService,private router: Router) { }
 
   ngOnInit(): void {
-    this.rnpService.getResourceAll('districts').subscribe(data=>{
-      this.districts = data['_embedded'].districts
-      console.log(this.districts)
-  
-  })
+   this.getReources()
 
 }
+getReources(){
+  this.rnpService.getResourceAll('districts').subscribe(data=>{
+    this.districts = data['_embedded'].districts
+    console.log(this.districts)
+
+})
+}
+addResource(){
+    this.router.navigateByUrl("iftar/addDistict")
+
+}
+onDeleteResource(url:string){
+  if(confirm('Etes vous sur de vouloir supprimer cette Axe ?')){
+  this.rnpService.deleteResource('districts',url).subscribe(data=>{
+ this.getReources()
+  },err=>{
+    console.log(err)
+  })
+  }
+   
+ 
+} 
 }
