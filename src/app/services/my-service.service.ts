@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { saveAs } from 'file-saver';
 @Injectable({
   providedIn: 'root'
 })
@@ -80,9 +80,15 @@ downloadAll(url){
   console.log(this.host+url,"azazazzaazzzzzzzzzzzzz")
   return this.http.get(this.host+url)
 }
-uploadFile(i){
-  return this.http.get(this.host+'/report/pdf/'+i)
+uploadFile1(format: string) {
+  const url = `${this.host}/report/${format}`;
+  return this.http.get(url, {
+    responseType: 'blob' // set the response type to 'blob'
+  }).subscribe((blob: Blob) => {
+    saveAs(blob, `report.${format}`); // download the blob as a file
+  });
 }
+
 
 // uploadFile1(){
 //   return this.http.get(this.host+'/report/pdf/')

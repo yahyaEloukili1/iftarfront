@@ -1,0 +1,44 @@
+<div class="container">
+    <!-- <button class="btn btn-primary mb-2 ml-auto">Add </button> -->
+    <div class="d-flex justify-content-end mb-2">
+      <button class="btn btn-primary ml-auto" (click)="addResource()">إضافة دائرة <i class="fa fa-plus-circle"></i>
+      </button>
+      <button  class="btn btn-success" (click)="oupload()">تبديل <i class="fa fa-pencil"></i></button>
+    </div>
+    
+      <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Actions</th>
+            <th>العنوان</th>
+            <th>اللائحة</th>
+              <th>الملحقة الإدارية</th>
+              <th>الادارة</th>
+              <th>الفئة</th>
+              <th>الإسم الكامل</th>
+              <th>Cin</th>
+              <th>الرقم الترتيبي</th>
+            
+             
+            </tr>
+           
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of benificiaires; let i = index">
+              <td>
+                <button  class="btn btn-success" (click)="onEditResource(p)">تبديل <i class="fa fa-pencil"></i></button>
+                &nbsp;
+                <button  class="btn btn-danger" (click)="onDeleteResource(p['_links'].self.href)">حذف <i class="fa fa-remove"></i></button>
+              </td>
+              <td>{{p.address}}</td>
+              <td>{{p.fiche}}</td>
+              <td>{{p.annexe.designation}}</td>
+              <td>{{p.district.designation}}</td>
+              <td>{{p.categorie.designation}}</td>
+              <td>{{p.nom}}</td>
+              <td>{{p.cin}}</td>
+              <td>{{p.id}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
