@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, groupBy, mergeMap, toArray } from 'rxjs';
 import { saveAs } from 'file-saver';
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,12 @@ export class MyServiceService {
  getResourceAll(resource: String):Observable<any[]>{
    if(this.jwtToken ==null)
    this.loadToken()
-   return this.http.get<any[]>(`${this.host}/${resource}`);
+   return this.http.get<any[]>(`${this.host}/${resource}?size=100000000000`);
+}
+getResourceAll2(resource: String):Observable<any[]>{
+  if(this.jwtToken ==null)
+  this.loadToken()
+  return this.http.get<any[]>(`${this.host}/all`);
 }
  getResource(resource: String,page:number,size:number):Observable<any[]>{ if(this.jwtToken ==null)
    this.loadToken()
@@ -87,6 +92,20 @@ uploadFile1(format: string) {
   }).subscribe((blob: Blob) => {
     saveAs(blob, `report.${format}`); // download the blob as a file
   });
+}
+uploadFile2(format: string) {
+  const url = `${this.host}/report2/${format}`;
+  return this.http.get(url, {
+    responseType: 'blob' // set the response type to 'blob'
+  }).subscribe((blob: Blob) => {
+    saveAs(blob, `report.${format}`); // download the blob as a file
+  });
+}
+getAllBenificiairesGroupedByCin(resource): Observable<any> {
+  return this.http.get(`${this.host}/benif`).pipe(
+    groupBy((b: any) => b.cin),
+    mergeMap(group => group.pipe(toArray()))
+  );
 }
 
 

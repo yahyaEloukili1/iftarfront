@@ -18,12 +18,12 @@ export class BenificiaresComponent implements OnInit {
 
 }
 oupload(){
-  this.rnpService.uploadFile1("pdf")
+  this.rnpService.uploadFile1('pdf')
   
 }
 getReources(){
-  this.rnpService.getResourceAll('benificiaires').subscribe(data=>{
-    this.benificiaires = data['_embedded'].benificiaires
+  this.rnpService.getResourceAll2('all').subscribe(data=>{
+    this.benificiaires = data
     console.log(this.benificiaires)
 
 })

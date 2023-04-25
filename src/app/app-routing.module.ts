@@ -10,6 +10,7 @@ import { AddAnnexeComponent } from './components/add-annexe/add-annexe.component
 import { EditAnnexeComponent } from './components/edit-annexe/edit-annexe.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BenificiaresComponent } from './components/benificiares/benificiares.component';
+import { DoublonsComponent } from './components/doublons/doublons.component';
 import { AddCategorieComponent } from './components/add-categorie/add-categorie.component';
 import { AddBenificiareComponent } from './components/add-benificiare/add-benificiare.component';
 import { EditCategorieComponent } from './components/edit-categorie/edit-categorie.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: "iftar/districts",component: DistritsComponent,canActivate: [AuthGuard]},
   {path: "iftar/categories",component: CategoriesComponent,canActivate: [AuthGuard]},
   {path: "iftar/benificiaires",component: BenificiaresComponent,canActivate: [AuthGuard]},
+  {path: "iftar/doublons",component: DoublonsComponent,canActivate: [AuthGuard]},
   {path: "iftar/annexes",component: AnnexesComponent,canActivate: [AuthGuard]},
   {path: "iftar/addDistict",component: AddDistrictComponent,canActivate: [AuthGuard]},
   {path: "iftar/addCategorie",component: AddCategorieComponent,canActivate: [AuthGuard]},
