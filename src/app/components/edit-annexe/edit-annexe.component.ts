@@ -26,7 +26,7 @@ selectedDistrict
     ngOnInit(): void {
 
       this.getReources()
-      this.url = atob(this.activatedRoute.snapshot.params['id'])
+      this.url = this.myService.host+'/annexes/'+this.activatedRoute.snapshot.params['id']
  
      this.myService.getOneResource(this.url).subscribe(data=>{
        console.log(this.url,"888888888888888888888888888888")

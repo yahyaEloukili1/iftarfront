@@ -17,8 +17,8 @@ export class AnnexesComponent implements OnInit {
 
 }
 getReources(){
-  this.rnpService.getResourceAll('annexes').subscribe(data=>{
-    this.annexes = data['_embedded'].annexes
+  this.rnpService.getResourceAll3('allAAL').subscribe(data=>{
+    this.annexes = data
     console.log(data)
 
 })
@@ -27,9 +27,9 @@ addResource(){
     this.router.navigateByUrl("iftar/addAnnexe")
 
 }
-onDeleteResource(url:string){
-  if(confirm('Etes vous sur de vouloir supprimer cette Axe ?')){
-  this.rnpService.deleteResource('annexes',url).subscribe(data=>{
+onDeleteResource(id){
+  if(confirm('Etes vous sur de vouloir supprimer cet annexe ?')){
+  this.rnpService.deleteResourceById(this.rnpService.host+'/annexes/'+id).subscribe(data=>{
  this.getReources()
   },err=>{
     console.log(err)
@@ -38,9 +38,9 @@ onDeleteResource(url:string){
    
  
 }
-onEditResource(p:any){
+onEditResource(id:any){
  
-  let url = p['_links'].self.href;
-  this.router.navigateByUrl("iftar/editAnnexe/"+btoa(url))
+
+  this.router.navigateByUrl("iftar/editAnnexe/"+id)
 } 
 }

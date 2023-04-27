@@ -27,7 +27,7 @@ addResource(){
 
 }
 onDeleteResource(url:string){
-  if(confirm('Etes vous sur de vouloir supprimer cette Axe ?')){
+  if(confirm('Etes vous sur de vouloir supprimer cette districte ?')){
   this.rnpService.deleteResource('districts',url).subscribe(data=>{
  this.getReources()
   },err=>{

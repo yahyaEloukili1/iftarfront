@@ -18,9 +18,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let p of annexes; let i = index">
-              <td><button  class="btn btn-success" (click)="onEditResource(p)">تبديل <i class="fa fa-pencil"></i></button>
+              <td><button  class="btn btn-success" (click)="onEditResource(p.id)">تبديل <i class="fa fa-pencil"></i></button>
                 &nbsp;
-                <button  class="btn btn-danger" (click)="onDeleteResource(p['_links'].self.href)">حذف <i class="fa fa-remove"></i></button>
+                <button  class="btn btn-danger" (click)="onDeleteResource(p.id)">حذف <i class="fa fa-remove"></i></button>
               </td>
               <td>{{p.designation}}</td>
               <td>{{p.district.designation}}</td>

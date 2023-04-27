@@ -21,6 +21,12 @@ getResourceAll2(resource: String):Observable<any[]>{
   this.loadToken()
   return this.http.get<any[]>(`${this.host}/all`);
 }
+getResourceAll3(resource: String):Observable<any[]>{
+  if(this.jwtToken ==null)
+  this.loadToken()
+  return this.http.get<any[]>(`${this.host}/allAAL
+  `);
+}
  getResource(resource: String,page:number,size:number):Observable<any[]>{ if(this.jwtToken ==null)
    this.loadToken()
      return this.http.get<any[]>(`${this.host}/${resource}?page=${page}&size=${size}`);
@@ -53,6 +59,14 @@ deleteResource(resource:string,url:string){ if(this.jwtToken ==null)
  this.loadToken()
 return this.http.delete(url);
 }
+deleteResourceById(url:string){ if(this.jwtToken ==null)
+  this.loadToken()
+ return this.http.delete(url);
+ }
+ deleteResourceById2(url:string){ if(this.jwtToken ==null)
+  this.loadToken()
+ return this.http.delete(url);
+ }
 getOneResource(url:string):Observable<any>{ if(this.jwtToken ==null)
  this.loadToken()
 return this.http.get<any>(url)
