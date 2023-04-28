@@ -43,10 +43,10 @@ onDeleteResource(url:string){
    
  
 }
-onEditResource(p:any){
+onEditResource(id:any){
  
-  let url = p['_links'].self.href;
-  this.router.navigateByUrl("iftar/editBenificiaire/"+btoa(url))
+
+  this.router.navigateByUrl("/iftar/editBenificiaire/"+id)
 } 
 
 }

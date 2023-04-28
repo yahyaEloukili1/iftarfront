@@ -34,7 +34,7 @@
                                 <label  class="control-label" style="display: block;text-align: right;">
                                     : * الدائرة 
                                 </label>
-                                 <select class="form-control" name="district" *ngIf="districts" [ngModel]="d" (ngModel)="selectedDistrict" (ngModelChange)="onRowClick($event)"> 
+                                 <select class="form-control" name="district" *ngIf="districts" [ngModel]="district" (ngModel)="selectedDistrict" (ngModelChange)="onRowClick($event)"> 
                                      
                                      <option *ngFor="let district of districts"  [value]="district.id">{{district.designation}}</option>
                                    </select>

@@ -9,7 +9,7 @@ import { MyServiceService } from 'src/app/services/my-service.service';
 })
 export class EditAnnexeComponent implements OnInit {
 districts
-d
+district
 currentDistrict
 selectedDistrict
   url
@@ -43,8 +43,8 @@ selectedDistrict
     // let u = url.slice(0,-9)
     console.log(url,'11111111111111&')
     this.myService.getOneResource(url).subscribe(data=>{
-    this.d = data.id
-     console.log(this.d,"kekekek")
+    this.district = data.id
+     console.log(this.district,"kekekek")
     })
 
  
@@ -59,7 +59,7 @@ selectedDistrict
     if(this.selectedDistrict){
       value.district = `${this.myService.host}/districts/${this.selectedDistrict}`
     }else{
-      value.district = `${this.myService.host}/districts/${this.d}`
+      value.district = `${this.myService.host}/districts/${this.district}`
     }
 console.log(value.district,"vvvvvvvvvvvvvvvvvvvvvvvv")
      this.myService.updateResource(this.url,value).subscribe(data=>{
