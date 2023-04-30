@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/services/my-service.service';
 
 @Component({
-  selector: 'app-doublons',
-  templateUrl: './doublons.component.html',
-  styleUrls: ['./doublons.component.css']
+  selector: 'app-doublons2',
+  templateUrl: './doublons2.component.html',
+  styleUrls: ['./doublons2.component.css']
 })
-export class DoublonsComponent implements OnInit {
+export class Doublons2Component implements OnInit {
 
   benificiaires
   constructor(private rnpService: MyServiceService,private router: Router) { }
@@ -22,12 +22,13 @@ isLastRowOfGroup(index: number) {
   return currentCin !== nextCin;
 }
 
+
 oupload(){
   this.rnpService.uploadFile2('pdf')
   
 }
 getReources(){
-  this.rnpService.getAllBenificiairesGroupedByCin('doublons').subscribe(data=>{
+  this.rnpService.getAllBenificiairesGroupedByCin('doublons2').subscribe(data=>{
      this.benificiaires = data[0]
     console.log(data,"zzaza")
     console.log(this.benificiaires)

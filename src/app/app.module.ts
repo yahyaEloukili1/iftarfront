@@ -20,6 +20,8 @@ import { BenificiaresComponent } from './components/benificiares/benificiares.co
 import { AddBenificiareComponent } from './components/add-benificiare/add-benificiare.component';
 import { EditBenificiareComponent } from './components/edit-benificiare/edit-benificiare.component';
 import { DoublonsComponent } from './components/doublons/doublons.component';
+import { Benificiares2Component } from './components/benificiares2/benificiares2.component';
+import { Doublons2Component } from './components/doublons2/doublons2.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { DoublonsComponent } from './components/doublons/doublons.component';
     BenificiaresComponent,
     AddBenificiareComponent,
     EditBenificiareComponent,
-    DoublonsComponent
+    DoublonsComponent,
+    Benificiares2Component,
+    Doublons2Component
   ],
   imports: [
     BrowserModule,

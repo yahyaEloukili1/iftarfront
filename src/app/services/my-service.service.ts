@@ -14,12 +14,12 @@ export class MyServiceService {
  getResourceAll(resource: String):Observable<any[]>{
    if(this.jwtToken ==null)
    this.loadToken()
-   return this.http.get<any[]>(`${this.host}/${resource}?size=100000000000`);
+   return this.http.get<any[]>(`${this.host}/${resource}`);
 }
 getResourceAll2(resource: String):Observable<any[]>{
   if(this.jwtToken ==null)
   this.loadToken()
-  return this.http.get<any[]>(`${this.host}/all`);
+  return this.http.get<any[]>(`${this.host}/${resource}`);
 }
 getResourceAll3(resource: String):Observable<any[]>{
   if(this.jwtToken ==null)
@@ -107,6 +107,14 @@ uploadFile1(format: string) {
     saveAs(blob, `report.${format}`); // download the blob as a file
   });
 }
+uploadFileArchive(format: string) {
+  const url = `${this.host}/reportArchive/${format}`;
+  return this.http.get(url, {
+    responseType: 'blob' // set the response type to 'blob'
+  }).subscribe((blob: Blob) => {
+    saveAs(blob, `report.${format}`); // download the blob as a file
+  });
+}
 uploadFile2(format: string) {
   const url = `${this.host}/report2/${format}`;
   return this.http.get(url, {
@@ -116,7 +124,7 @@ uploadFile2(format: string) {
   });
 }
 getAllBenificiairesGroupedByCin(resource): Observable<any> {
-  return this.http.get(`${this.host}/benif`).pipe(
+  return this.http.get(`${this.host}/${resource}`).pipe(
     groupBy((b: any) => b.cin),
     mergeMap(group => group.pipe(toArray()))
   );

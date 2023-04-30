@@ -11,16 +11,20 @@ import { EditAnnexeComponent } from './components/edit-annexe/edit-annexe.compon
 import { CategoriesComponent } from './components/categories/categories.component';
 import { BenificiaresComponent } from './components/benificiares/benificiares.component';
 import { DoublonsComponent } from './components/doublons/doublons.component';
+import { Doublons2Component } from './components/doublons2/doublons2.component';
 import { AddCategorieComponent } from './components/add-categorie/add-categorie.component';
 import { AddBenificiareComponent } from './components/add-benificiare/add-benificiare.component';
 import { EditCategorieComponent } from './components/edit-categorie/edit-categorie.component';
 import { EditBenificiareComponent } from './components/edit-benificiare/edit-benificiare.component';
+import { Benificiares2Component } from './components/benificiares2/benificiares2.component';
 const routes: Routes = [
   {path: "iftar/login",component: LoginComponent},
   {path: "iftar/districts",component: DistritsComponent,canActivate: [AuthGuard]},
   {path: "iftar/categories",component: CategoriesComponent,canActivate: [AuthGuard]},
   {path: "iftar/benificiaires",component: BenificiaresComponent,canActivate: [AuthGuard]},
+  {path: "iftar/benificiaires2",component: Benificiares2Component,canActivate: [AuthGuard]},
   {path: "iftar/doublons",component: DoublonsComponent,canActivate: [AuthGuard]},
+  {path: "iftar/doublons2",component: Doublons2Component,canActivate: [AuthGuard]},
   {path: "iftar/annexes",component: AnnexesComponent,canActivate: [AuthGuard]},
   {path: "iftar/addDistict",component: AddDistrictComponent,canActivate: [AuthGuard]},
   {path: "iftar/addCategorie",component: AddCategorieComponent,canActivate: [AuthGuard]},

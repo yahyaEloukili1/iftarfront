@@ -80,6 +80,7 @@ this.pdiService.getResourceAll('districts').subscribe(data=>{
       
       
        else{
+        console.log(f.value,'xxxx')
       
         this.pdiService.addResource("benificiaires",f.value).subscribe(data=>{
          this.ajoute =true
@@ -87,20 +88,24 @@ this.pdiService.getResourceAll('districts').subscribe(data=>{
               },err=>{
                 console.log(err)
               })
+
+              this.pdiService.addResource("benificiaireArchives",f.value).subscribe(data=>{
+                this.ajoute =true
+                 f.reset()
+                     },err=>{
+                       console.log(err)
+                     })
        }
         
-
         })
+
+        
+        
+      }
       
       
       
-      
-      
-      
-      
-      
-      
-      })
+      )
 
 
    
