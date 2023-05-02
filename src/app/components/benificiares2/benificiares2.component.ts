@@ -9,16 +9,41 @@ import { MyServiceService } from 'src/app/services/my-service.service';
 })
 export class Benificiares2Component implements OnInit {
 cin
+selectedAnnexe
+annexes
   benificiaires
   constructor(private rnpService: MyServiceService,private router: Router) { }
 
   ngOnInit(): void {
    this.getReources()
+   this.getAnnexes()
 
 }
 oupload(){
   this.rnpService.uploadFileArchive('pdf')
   
+}
+getAnnexes(){
+  this.rnpService.getResourceAll('annexes').subscribe(data=>{
+    this.annexes = data['_embedded'].annexes
+    console.log(this.annexes,"888888888888")
+
+})
+}
+onRowClickAnnexe(e){
+  this.selectedAnnexe = e
+  if(e==0){
+    this.getReources()
+  }else{
+    this.rnpService.getOneResource(this.rnpService.host+"/benificiaireArchives/search/findByAnnexeId?id="+e).subscribe(data=>{
+      this.benificiaires = data['_embedded'].benificiaires
+  
+   
+  
+  
+       })
+  }
+ 
 }
 checrher(){
   console.log(this.cin,'rrrrrrrrrrrrr')

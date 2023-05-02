@@ -17,10 +17,14 @@ import { AddBenificiareComponent } from './components/add-benificiare/add-benifi
 import { EditCategorieComponent } from './components/edit-categorie/edit-categorie.component';
 import { EditBenificiareComponent } from './components/edit-benificiare/edit-benificiare.component';
 import { Benificiares2Component } from './components/benificiares2/benificiares2.component';
+import { FichesComponent } from './components/fiches/fiches.component';
+import { AddFicheComponent } from './components/add-fiche/add-fiche.component';
+import { EditFicheComponent } from './components/edit-fiche/edit-fiche.component';
 const routes: Routes = [
   {path: "iftar/login",component: LoginComponent},
   {path: "iftar/districts",component: DistritsComponent,canActivate: [AuthGuard]},
   {path: "iftar/categories",component: CategoriesComponent,canActivate: [AuthGuard]},
+  {path: "iftar/fiches",component: FichesComponent,canActivate: [AuthGuard]},
   {path: "iftar/benificiaires",component: BenificiaresComponent,canActivate: [AuthGuard]},
   {path: "iftar/benificiaires2",component: Benificiares2Component,canActivate: [AuthGuard]},
   {path: "iftar/doublons",component: DoublonsComponent,canActivate: [AuthGuard]},
@@ -28,12 +32,14 @@ const routes: Routes = [
   {path: "iftar/annexes",component: AnnexesComponent,canActivate: [AuthGuard]},
   {path: "iftar/addDistict",component: AddDistrictComponent,canActivate: [AuthGuard]},
   {path: "iftar/addCategorie",component: AddCategorieComponent,canActivate: [AuthGuard]},
+  {path: "iftar/addFiche",component: AddFicheComponent,canActivate: [AuthGuard]},
   {path: "iftar/addBenificiare",component: AddBenificiareComponent,canActivate: [AuthGuard]},
   {path: "iftar/addAnnexe",component: AddAnnexeComponent,canActivate: [AuthGuard]},
   {path: "iftar/editAnnexe/:id",component: EditAnnexeComponent,canActivate: [AuthGuard]},
   {path: "iftar/editCategorie/:id",component: EditCategorieComponent,canActivate: [AuthGuard]},
   {path: "iftar/editBenificiaire/:id",component: EditBenificiareComponent,canActivate: [AuthGuard]},
   {path: "iftar/editDistrict/:id",component: EditDistrictComponent,canActivate: [AuthGuard]},
+  {path: "iftar/editFiche/:id",component: EditFicheComponent,canActivate: [AuthGuard]},
  
 {path: "iftar", redirectTo : "iftar/districts", pathMatch: 'full'},
 {path: "", redirectTo : "iftar/districts", pathMatch: 'full'},

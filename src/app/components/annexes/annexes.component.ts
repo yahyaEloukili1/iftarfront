@@ -28,7 +28,7 @@ addResource(){
 
 }
 onDeleteResource(id){
-  if(confirm('Etes vous sur de vouloir supprimer cet annexe ?')){
+  if(confirm('Etes vous sur de vouloir supprimer cette resource ?')){
   this.rnpService.deleteResourceById(this.rnpService.host+'/annexes/'+id).subscribe(data=>{
  this.getReources()
   },err=>{

@@ -22,6 +22,9 @@ import { EditBenificiareComponent } from './components/edit-benificiare/edit-ben
 import { DoublonsComponent } from './components/doublons/doublons.component';
 import { Benificiares2Component } from './components/benificiares2/benificiares2.component';
 import { Doublons2Component } from './components/doublons2/doublons2.component';
+import { FichesComponent } from './components/fiches/fiches.component';
+import { AddFicheComponent } from './components/add-fiche/add-fiche.component';
+import { EditFicheComponent } from './components/edit-fiche/edit-fiche.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,10 @@ import { Doublons2Component } from './components/doublons2/doublons2.component';
     EditBenificiareComponent,
     DoublonsComponent,
     Benificiares2Component,
-    Doublons2Component
+    Doublons2Component,
+    FichesComponent,
+    AddFicheComponent,
+    EditFicheComponent
   ],
   imports: [
     BrowserModule,

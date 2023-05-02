@@ -12,11 +12,36 @@ export class BenificiaresComponent implements OnInit {
 
   benificiaires
   cin
+  annexes
+  selectedAnnexe
   constructor(private rnpService: MyServiceService,private router: Router) { }
 
   ngOnInit(): void {
    this.getReources()
+   this.getAnnexes()
 
+}
+getAnnexes(){
+  this.rnpService.getResourceAll('annexes').subscribe(data=>{
+    this.annexes = data['_embedded'].annexes
+    console.log(this.annexes,"888888888888")
+
+})
+}
+onRowClickAnnexe(e){
+  this.selectedAnnexe = e
+  if(e==0){
+    this.getReources()
+  }else{
+    this.rnpService.getOneResource(this.rnpService.host+"/benificiaires/search/findByAnnexeId?id="+e).subscribe(data=>{
+      this.benificiaires = data['_embedded'].benificiaires
+  
+   
+  
+  
+       })
+  }
+ 
 }
 checrher(){
   console.log(this.cin,'rrrrrrrrrrrrr')
@@ -45,9 +70,9 @@ addResource(){
     this.router.navigateByUrl("iftar/addBenificiare")
 
 }
-onDeleteResource(url:string){
-  if(confirm('Etes vous sur de vouloir supprimer cette Axe ?')){
-  this.rnpService.deleteResource('benificiaires',url).subscribe(data=>{
+onDeleteResource(id:string){
+  if(confirm('Etes vous sur de vouloir supprimer cette resource ?')){
+    this.rnpService.deleteResourceById(this.rnpService.host+'/benificiaires/'+id).subscribe(data=>{
  this.getReources()
   },err=>{
     console.log(err)

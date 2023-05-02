@@ -28,7 +28,7 @@ addResource(){
 
 }
 onDeleteResource(url:string){
-  if(confirm('Etes vous sur de vouloir supprimer cette Catégorie ?')){
+  if(confirm('Etes vous sur de vouloir supprimer cette resource ?')){
   this.rnpService.deleteResource('categories',url).subscribe(data=>{
  this.getReources()
   },err=>{

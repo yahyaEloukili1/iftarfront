@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { MyServiceService } from 'src/app/services/my-service.service';
 
 @Component({
-  selector: 'app-add-categorie',
-  templateUrl: './add-categorie.component.html',
-  styleUrls: ['./add-categorie.component.css']
+  selector: 'app-add-fiche',
+  templateUrl: './add-fiche.component.html',
+  styleUrls: ['./add-fiche.component.css']
 })
-export class AddCategorieComponent implements OnInit {
+export class AddFicheComponent implements OnInit {
+
   ajoute = true
   constructor(private pdiService: MyServiceService, private router: Router) { }
 
@@ -23,7 +24,7 @@ export class AddCategorieComponent implements OnInit {
 
  else{
 
-  this.pdiService.addResource("categories",f.value).subscribe(data=>{
+  this.pdiService.addResource("fiches",f.value).subscribe(data=>{
    this.ajoute =true
     f.reset()
         },err=>{
@@ -33,7 +34,7 @@ export class AddCategorieComponent implements OnInit {
  
 }
   gotoList(){
-    this.router.navigateByUrl('iftar/categories');
+    this.router.navigateByUrl('iftar/fiches');
   }
   reset(f:NgForm){
 f.reset()

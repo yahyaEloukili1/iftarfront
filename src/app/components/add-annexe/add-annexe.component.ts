@@ -29,10 +29,10 @@ export class AddAnnexeComponent implements OnInit {
     f.value.district = `${this.pdiService.host}/districts/${f.value.district}`
     console.log(f.value.district,"jej")
  if(!f.value.designation){
-  alert('المرجو إدخال رقم البطاقة الوطنية')
+  alert(' المرجو ادخال المعلومات'  )
  }
  if(f.value.district ==  `${this.pdiService.host}/districts/`){
-  alert('المرجو إدخال رقم البطاقة الوطنية')
+  alert(' المرجو ادخال المعلومات'  )
  }
 
  else{

@@ -17,7 +17,7 @@ export class AddDistrictComponent implements OnInit {
   onSaveAffectation(f:NgForm){
     this.ajoute = false
  if(!f.value.designation){
-  alert('المرجو إدخال رقم البطاقة الوطنية')
+  alert(' المرجو ادخال المعلومات'  )
  }
 
  else{

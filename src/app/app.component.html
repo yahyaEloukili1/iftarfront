@@ -46,6 +46,9 @@
           <li class="nav-item" *ngIf="pdiService.jwtToken">
             <a class="nav-link" [routerLink]="['iftar/categories']" [routerLinkActive]="['is-active']">الفئات</a>
           </li>
+          <li class="nav-item" *ngIf="pdiService.jwtToken">
+            <a class="nav-link" [routerLink]="['iftar/fiches']" [routerLinkActive]="['is-active']">اللوائح</a>
+          </li>
           <li class="nav-item"  style="margin-left: 10px;">
             <a class="navbar-brand" [routerLink]="['pdi/dashboard']" [routerLinkActive]="['is-active']">
               <img src="../assets/images/logo-removebg-preview (1).png" style="height: auto;width: 40px;" alt="">

@@ -135,7 +135,7 @@ onRowClicCategorie(e){
       }else{
         value.categorie = `${this.myService.host}/categories/${this.categorie}`
       }
-  console.log(value.district,"vvvvvvvvvvvvvvvvvvvvvvvv")
+  console.log(value,"vvvvvvvvvvvvvvvvvvvvvvvv")
        this.myService.updateResource(this.url,value).subscribe(data=>{
          alert("Mise a jour effectuée avec succès")
        },err=>{

@@ -11,7 +11,7 @@
     إضافة مستفيد جديد
         </div>
         <div class="card-body">
-        <form #f="ngForm" (ngSubmit)="onUpdateResource(f)" *ngIf="currentResource">
+        <form #f="ngForm" (ngSubmit)="onUpdateResource(f.value)" *ngIf="currentResource">
            
                  
           

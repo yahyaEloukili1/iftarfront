@@ -60,22 +60,22 @@ this.pdiService.getResourceAll('districts').subscribe(data=>{
           console.log(f.value.annexeName,"jej")
           console.log(f.value.districtName,"jej")
        if(!f.value.nom){
-        alert('المرجو إدخال رقم البطاقة الوطنية')
+ alert(' المرجو ادخال المعلومات'  )
        }
        if(!f.value.cin){
-        alert('المرجو إدخال رقم البطاقة الوطنية')
+ alert(' المرجو ادخال المعلومات'  )
        }
        if(!f.value.address){
-        alert('المرجو إدخال رقم البطاقة الوطنية')
+ alert(' المرجو ادخال المعلومات'  )
        }
        if(f.value.district ==  `${this.pdiService.host}/districts/`){
-        alert('المرجو إدخال رقم البطاقة الوطنية')
+ alert(' المرجو ادخال المعلومات'  )
        }
        if(f.value.categorie ==  `${this.pdiService.host}/categories/`){
-        alert('المرجو إدخال رقم البطاقة الوطنية')
+ alert(' المرجو ادخال المعلومات'  )
        }
        if(f.value.annexe ==  `${this.pdiService.host}/annexes/`){
-        alert('المرجو إدخال رقم البطاقة الوطنية')
+ alert(' المرجو ادخال المعلومات'  )
        }
       
       

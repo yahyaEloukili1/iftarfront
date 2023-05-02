@@ -14,7 +14,17 @@
         <form #f="ngForm" (ngSubmit)="onSaveAffectation(f)">
            
             <div class="row">
-               <div class="col">
+                <div class="col">
+                    <div class="form-group">
+                        <label  class="control-label" style="display: block;text-align: right;">
+                            : * الإسم الكامل
+                        </label>
+                        <input type="text" name="nom" style="text-align: right;" ngModel class="form-control">
+                    </div> 
+                   </div>
+                   
+               
+                   <div class="col">
                     <div class="form-group">
                         <label  class="control-label" style="display: block;text-align: right;">
                             : * Identifiant
@@ -22,7 +32,6 @@
                         <input type="text" name="identifiant" style="text-align: right;" ngModel class="form-control">
                     </div> 
                    </div> 
-                 
                    
                    
                    
@@ -37,16 +46,15 @@
                                 <input type="text" name="cin" style="text-align: right;" ngModel class="form-control">
                             </div> 
                            </div>
+                      
                            <div class="col">
                             <div class="form-group">
                                 <label  class="control-label" style="display: block;text-align: right;">
-                                    : * الإسم الكامل
+                                    : * اللائحة
                                 </label>
-                                <input type="text" name="nom" style="text-align: right;" ngModel class="form-control">
+                                <input type="text" name="fiche" style="text-align: right;" ngModel class="form-control">
                             </div> 
-                           </div>
-                           
-                           
+                           </div> 
                            
                        </div>
               
