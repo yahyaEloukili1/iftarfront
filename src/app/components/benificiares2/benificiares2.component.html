@@ -30,14 +30,16 @@
         <thead>
         <tr>
           <!-- <th style="width: 20%;">Actions</th> -->
+          <th>الاحذاثيات</th>
+          <th>ملاحضات</th>
+          <th>الهاتف</th>
+          <th>المساحة</th>
+          <th>الملحقة</th>
           <th>العنوان</th>
-          <th>اللائحة</th>
-            <th>الملحقة الإدارية</th>
-            <th>الادارة</th>
-            <th>الفئة</th>
-            <th>الإسم الكامل</th>
-            <th>Cin</th>
-            <th>الرقم الترتيبي</th>
+          <th>الفئة</th>
+          <th>الاسم</th>
+          <th>الرقم الترتيبي</th>
+          
           
            
           </tr>
@@ -50,14 +52,15 @@
               &nbsp;
               <button  class="btn btn-danger" (click)="onDeleteResource(p['_links'].self.href)">حذف <i class="fa fa-remove"></i></button>
             </td> -->
-            <td>{{p.address}}</td>
-            <td>{{p.fiche}}</td>
-            <td>{{p.annexeName}}</td>
-            <td>{{p.districtName}}</td>
-            <td>{{p.categorieName}}</td>
-            <td>{{p.nom}}</td>
-            <td>{{p.cin}}</td>
             <td>{{p.identifiant}}</td>
+            <td>{{p.designation}}</td>
+            <td>{{p.categorie}}</td>
+            <td>{{p.adress}}</td>
+            <td>{{p.annexeName}}</td>
+            <td>{{p.superficie}}</td>
+            <td>{{p.contact}}</td>
+            <td>{{p.observations}}</td>
+            <td>({{p.x}},{{p.x}})</td>
         </tr>
       </tbody>
     </table>

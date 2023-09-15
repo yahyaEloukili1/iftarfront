@@ -17,9 +17,9 @@ export class AnnexesComponent implements OnInit {
 
 }
 getReources(){
-  this.rnpService.getResourceAll3('allAAL').subscribe(data=>{
-    this.annexes = data
-    console.log(data)
+  this.rnpService.getResourceAll('annexes').subscribe(data=>{
+    this.annexes = data['_embedded'].annexes
+    console.log(this.annexes)
 
 })
 }
